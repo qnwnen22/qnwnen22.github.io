@@ -1,128 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Moka Dev</title>
-    <meta charset="utf-8">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-</head>
-<body>
-    <header class="jumbotron text-center bg-dark" style="max-height: 550px; margin-bottom:0; border-radius:0">
-        <div class="col-12">
-            <img src="./images/profile.jpg" class="rounded-circle" alt="profile" width="304" height="236">
-            <br />
-            <br />
-            <h1 class="text-white">C# 윈도우 개발자 이원혁입니다.</h1>
-            <img src="./images/Csharp.png" style="max-height:50px" class="" alt="">
-            <img src="./images/mongodb.png" style="max-height:50px" class="" alt="">
-            <img src="./images/java.png" style="max-height:50px" class="" alt="">
-            <img src="./images/sql.png" style="max-height:50px" class="" alt="">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Freelancer - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="./css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#skill">기술스택</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#project">프로젝트</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">기술스택</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
+            </div>
+        </header>
+        <section class="page-section" id="skill">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">기술스택</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Contact Section Form-->
+                <div class="container col-10">
+                    <hr>
+                    <!-- Skill1 -->
+                    <div class="row">
+                        <div class="col-6 col-md-2" 
+                            style="
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;" >
+                            <img class="img-img-fluid" style="max-height: 100px; max-width: 200px;" src="./images/Csharp.png">
+                        </div>
+                        <div class="col-6 col-md-2" 
+                            style="
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;" >
+                            <h2>C#</h2>
+                        </div>
+                        <div class="col-12 col-md-8" style="text-align: justify;">
+                            <b>이름의 유래는 두 가지에서 따왔다고 한다.# 첫 번째 의미는 음악에서 유래한 것으로, 도(C)에 반음(#)을 올린 것.[4] MS에서는 출판물 등에서 키보드의 # 대신 유니코드의 반음 올림 기호(♯, U+266F)를 쓰기도 한다. 두 번째 의미는 많은 사람들이 알고 있듯이 C++ ++라는 뜻이다. ++++을 세로로 쌓으면 시각적으로 # 모양이 되기 때문. 한때 해커들 사이에서 유행했었던 리트의 일종이다.</b>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Skill2 -->
+                    <div class="row">
+                        <div class="col-6 col-md-2" 
+                            style="
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;" >
+                            <img class="img-img-fluid" style="max-height: 100px; max-width: 200px;" src="./images/java.png">
+                        </div>
+                        <div class="col-6 col-md-2" 
+                            style="
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;" >
+                            <h2>C#</h2>
+                        </div>
+                        <div class="col-12 col-md-8" style="text-align: justify;">
+                            <b>이름의 유래는 두 가지에서 따왔다고 한다.# 첫 번째 의미는 음악에서 유래한 것으로, 도(C)에 반음(#)을 올린 것.[4] MS에서는 출판물 등에서 키보드의 # 대신 유니코드의 반음 올림 기호(♯, U+266F)를 쓰기도 한다. 두 번째 의미는 많은 사람들이 알고 있듯이 C++ ++라는 뜻이다. ++++을 세로로 쌓으면 시각적으로 # 모양이 되기 때문. 한때 해커들 사이에서 유행했었던 리트의 일종이다.</b>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Skill3 -->
+                    <div class="row">
+                        <div class="col-6 col-md-2" 
+                            style="
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;" >
+                            <img class="img-img-fluid" style="max-height: 100px; max-width: 200px;" src="./images/mongodb.png">
+                        </div>
+                        <div class="col-6 col-md-2" 
+                            style="
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;" >
+                            <h2>C#</h2>
+                        </div>
+                        <div class="col-12 col-md-8" style="text-align: justify;">
+                            <b>이름의 유래는 두 가지에서 따왔다고 한다.# 첫 번째 의미는 음악에서 유래한 것으로, 도(C)에 반음(#)을 올린 것.[4] MS에서는 출판물 등에서 키보드의 # 대신 유니코드의 반음 올림 기호(♯, U+266F)를 쓰기도 한다. 두 번째 의미는 많은 사람들이 알고 있듯이 C++ ++라는 뜻이다. ++++을 세로로 쌓으면 시각적으로 # 모양이 되기 때문. 한때 해커들 사이에서 유행했었던 리트의 일종이다.</b>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Skill4 -->
+                    <div class="row">
+                        <div class="col-6 col-md-2" 
+                            style="
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;" >
+                            <img class="img-img-fluid" style="max-height: 100px; max-width: 200px;" src="./images/sql.png">
+                        </div>
+                        <div class="col-6 col-md-2" 
+                            style="
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;" >
+                            <h2>C#</h2>
+                        </div>
+                        <div class="col-12 col-md-8" style="text-align: justify;">
+                            <b>이름의 유래는 두 가지에서 따왔다고 한다.# 첫 번째 의미는 음악에서 유래한 것으로, 도(C)에 반음(#)을 올린 것.[4] MS에서는 출판물 등에서 키보드의 # 대신 유니코드의 반음 올림 기호(♯, U+266F)를 쓰기도 한다. 두 번째 의미는 많은 사람들이 알고 있듯이 C++ ++라는 뜻이다. ++++을 세로로 쌓으면 시각적으로 # 모양이 되기 때문. 한때 해커들 사이에서 유행했었던 리트의 일종이다.</b>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Skill5 -->
+                    <div class="row">
+                        <div class="col-6 col-md-2" 
+                            style="
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;" >
+                            <img class="img-img-fluid" style="max-height: 100px;" src="./images/Csharp.png">
+                        </div>
+                        <div class="col-6 col-md-2" 
+                            style="
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;" >
+                            <h2>C#</h2>
+                        </div>
+                        <div class="col-12 col-md-8" style="text-align: justify;">
+                            <b>이름의 유래는 두 가지에서 따왔다고 한다.# 첫 번째 의미는 음악에서 유래한 것으로, 도(C)에 반음(#)을 올린 것.[4] MS에서는 출판물 등에서 키보드의 # 대신 유니코드의 반음 올림 기호(♯, U+266F)를 쓰기도 한다. 두 번째 의미는 많은 사람들이 알고 있듯이 C++ ++라는 뜻이다. ++++을 세로로 쌓으면 시각적으로 # 모양이 되기 때문. 한때 해커들 사이에서 유행했었던 리트의 일종이다.</b>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+        </section>
+        <!-- Portfolio Section-->
+        <section class="page-section portfolio" id="project">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">프로젝트</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-content-center">
+                    <!-- Portfolio Item 1-->
+                    <div class="col-md-6 col-lg-6 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/cashdata.png" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 2-->
+                    <div class="col-md-6 col-lg-6 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/a-helper.png" alt="..." />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section-->
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-4 ms-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
+                </div>
+                <!-- About Section Button-->
+                <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
+                        <i class="fas fa-download me-2"></i>
+                        Free Download!
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section-->
+        
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <p class="lead mb-0">
+                            2215 John Daniel Drive
+                            <br />
+                            Clark, MO 65243
+                        </p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                    </div>
+                    <!-- Footer About Text-->
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                        <p class="lead mb-0">
+                            Freelance is a free to use, MIT licensed Bootstrap theme created by
+                            <a href="http://startbootstrap.com">Start Bootstrap</a>
+                            .
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Copyright Section-->
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>Copyright &copy; Your Website 2021</small></div>
         </div>
-    </header>
+        
+        
+        
+        
+        <!-- Portfolio Modals-->
+        <!-- Portfolio Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">캐시 데이터</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cashdata.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        Cash Data는
+                                        알리익스프레스와 아마존에서 판매되고 있는 카테고리의 상품들을<br>
+                                        국내에 있는 스마트스토어, 쿠팡, 옥션, G마켓, 위메프, 티몬에 업로드 해주는 상품 대량 등록 프로그램입니다.<br>
+                                        상품을 일일이 수정할 필요 없이 국내 마켓에 대량 등록합니다.<br>
+                                        상표권 지적재산권을 방지하는 기능이 포함되어 법률적인 분쟁을 최소화 할 수 있습니다.<br>
+                                        전자상거래 시장에서 캐시데이터는 매출이 없는 초기에 대량의 상품을 등록하여<br>
+                                        빠른 매출 성과를 기대할 수 있고 대량의 상품을 소수 인원으로 관리할 수 있으며 인건비를 절감할 수 있습니다.
 
-    <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top
-         navbar sticky-top">
-        <div class="col-2"></div>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar" style="text-align:center">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" onclick="scroll_move('#skill');">기술스택</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" onclick="scroll_move('#work');">경력</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" onclick="scroll_move('#study');">교육이력</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" onclick="scroll_move('#project');">프로젝트</a>
-                </li>                   
-                <li class="nav-item">   
-                    <a class="nav-link" onclick="scroll_move('#devel_tool');">개발 툴</a>
-                </li>
-                <li class="nav-item">   
-                    <a class="nav-link" href="./profile">개발 툴</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <br>
-    <br>
-    <br>
-    <div id="skill" style="height:200px;" class="container">
-        <h2>기술스택</h2>
-        <div class="row">
-            <div class="col-sm-4">
-                <h3>Column 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-                <a href="../profile">qweqw</a>
-            </div>
-            <div class="col-sm-4">
-                <h3>Column 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </div>
-            <div class="col-sm-4">
-                <h3>Column 3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="work" style="height:200px;" class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <h3>Column 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-                <a href="../profile">qweqw</a>
-            </div>
-            <div class="col-sm-4">
-                <h3>Column 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut ennim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </div>
-            <div class="col-sm-4">
-                <h3>Column 3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut eim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </div>
-        </div>
-    </div>
-    <div id="study" style="height:200px;" class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <h3>Column 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-                <a href="../profile">qweqw</a>
-            </div>
-            <div class="col-sm-4">
-                <h3>Column 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-            </div>
-            <div class="col-sm-4">
-                <h3>Column 3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+        <!-- Portfolio Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">에이헬퍼</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/a-helper.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-
-    <footer class="bg-light text-center text-lg-start">
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-          © 2022 Copyright:
-          <a class="text-dark" href="https://github.com/qnwnen22">Moka Development</a>
+        <!-- Portfolio Modal 3-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Copyright -->
-      </footer>
-</body>
-<script src="./js/scroll.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Portfolio Modal 4-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/game.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="./js/scripts.js"></script>
+        <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
+    </body>
 </html>
