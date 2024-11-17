@@ -12,66 +12,89 @@
         font-size: 62.5%;
     }
 
+    .menu {
+        width: 100%;
+        display: inline-block;
+        background-color: #333333;
+        color: white;
+        font-size: 1rem;
+        position: fixed;
+        left: 0;
+    }
+
+    a:link,
+    a:visited {
+        color: white;
+    }
+
+    .menu a:hover {
+        background-color: #111111;
+    }
+
+    .menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .menu li {
+        float: left;
+    }
+
+    .menu a {
+        display: block;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+        font-size: 2rem;
+    }
+
     body {
         margin: 0;
         padding: 0;
         text-align: center;
+    }
 
-        .menu {
-            width: 100%;
-            display: inline-block;
-            background-color: #333333;
-            color: white;
-            font-size: 1rem;
-            position: fixed;
-            left: 0;
+    .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .contents {
+        margin: auto;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        margin-top: 10rem;
+        width: 100%;
+        max-width: 96rem;
+        display: inline-grid;
+        grid-template-columns: 1fr;
+    }
+
+    @media all and (max-width: 959px) {
+
+        img {
+            width: 28rem;
         }
 
-        .menu ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        .menu li {
-            float: left;
-        }
-
-        .menu a {
-            display: block;
-            text-align: center;padding: 16px;
-            text-decoration: none;
-            font-size: 2rem;
-        }
-
-        a:link,
-        a:visited {
-            color: white;
-        }
-
-
-        .menu a:hover {
-            background-color: #111111;
+        .title {
+            font-size: 2.4rem;
         }
 
         .contents {
-            margin: auto;
-            text-align: center;
-            padding: 0;
-            margin: 0;
-            margin-top: 10rem;
-            width: 100%;
-            max-width: 96rem;
-            display: inline-grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr;
         }
 
-        .grid-item {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            font-size: 30px;
-            text-align: center;
+    }
+
+    @media all and (min-width:960px) {
+
+        .contents {
+            grid-template-columns: 1fr 2fr;
         }
     }
 </style>
@@ -83,7 +106,7 @@
         </div>
         <div style="float: right;">
             <ul>
-                <li><a>Home</a></li>
+                <li><a href="/menu/test">Home</a></li>
                 <li><a>News</a></li>
                 <li><a>Contact</a></li>
                 <li><a>About</a></li>
@@ -96,9 +119,9 @@
             <img src="./images/caboot.jpg" width="100%" ; />
         </div>
         <div class="grid-item">
-            <h3> 안녕하세요. 닷넷 개발자 이원혁입니다. </h3>
+            <h3 class="title"> 안녕하세요. 닷넷 개발자 이원혁입니다. </h3>
             <p style="font-size: 1.8rem; text-align: justify;">
-                웹 패킷 분석을 통한 대량 데이터 스크래핑 전문으로한 3년차 개발자 입니다.
+                웹 패킷 분석을 통한 대량 데이터 스크래핑을 전문으로 한 3년 차 개발자입니다.
                 <br>
                 Winform, WPF, ASP.NET 등 닷넷 환경에서의 많은 개발 경험을 갖고 있습니다.
                 <br>
@@ -294,6 +317,29 @@
                     <li>기획 : 컨셉 기획, 시스템 기획, 레벨 디자인, 역기획서 작성</li>
                     <li>Unity를 활용한 MMORPG 구현</li>
                 </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="contents">
+        <div class="grid-item">
+            <div style="width: 100%; background-color: rgb(226, 13, 13); height: 2px; margin: 0rem; padding: 0;"></div>
+            <b>Channal</b>
+        </div>
+        <div class="grid-item">
+            <div style="text-align: justify;">
+                <p style="font-size: 1.8rem; text-align: justify;">
+                    <b>GitHub : </b>
+                    <a target="_blank" href="https://github.com/qnwnen22"
+                        style="color: black;">https://github.com/qnwnen22</a><br>
+                </p>
+                <p style="font-size: 1.8rem; text-align: justify;">
+                    <b>Nuget : </b>
+                    <a target="_blank" href="https://www.nuget.org/packages/Moka"
+                        style="color: black;">https://github.com/qnwnen22</a><br>
+                </p>
+
+
             </div>
         </div>
     </div>
