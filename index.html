@@ -75,6 +75,27 @@
         grid-template-columns: 1fr;
     }
 
+    .table {
+        width: 100%;
+        display: inline-grid;
+        font-size: 1.7rem;
+        text-align: justify;
+    }
+
+    .redLien {
+        width: 100%;
+        background-color: rgb(226, 13, 13);
+        height: 2px;
+        margin: 0rem;
+        padding: 0;
+    }
+
+    .period {
+        font-size: 1.7rem;
+        float: right
+    }
+
+
     @media all and (max-width: 959px) {
 
         img {
@@ -89,12 +110,27 @@
             grid-template-columns: 1fr;
         }
 
+        .table {
+            grid-template-columns: 1fr 1fr;
+        }
     }
 
     @media all and (min-width:960px) {
 
+        img {
+            width: 100%;
+        }
+
         .contents {
             grid-template-columns: 1fr 2fr;
+        }
+
+        .table {
+            grid-template-columns: 1fr 2fr 1fr 2fr;
+        }
+
+        .title {
+            font-size: 3rem;
         }
     }
 </style>
@@ -102,22 +138,24 @@
 <body>
     <nav class="menu">
         <div style="float: left;">
-            <a href="#">개발자 이원혁</a>
+            <a href="/">개발자 이원혁</a>
         </div>
-        <div style="float: right;">
+        <!-- <div style="float: right;">
             <ul>
                 <li><a href="/menu/test">Home</a></li>
                 <li><a>News</a></li>
                 <li><a>Contact</a></li>
                 <li><a>About</a></li>
             </ul>
-        </div>
+        </div> -->
     </nav>
 
     <div class="contents">
-        <div class="grid-item" style="text-align: center;;">
-            <img src="./images/caboot.jpg" width="100%" ; />
+        
+        <div class="grid-item">
+            <img src="./images/caboot.jpg" />
         </div>
+        
         <div class="grid-item">
             <h3 class="title"> 안녕하세요. 닷넷 개발자 이원혁입니다. </h3>
             <p style="font-size: 1.8rem; text-align: justify;">
@@ -132,64 +170,56 @@
                 주어진 환경에서 최선을 다해 최고의 결과물을 만드는 것이 개발자의 진정한 가치라고 믿고 있습니다.
             </p>
         </div>
+    
     </div>
+
     <br>
 
     <div class="contents">
+        
         <div class="grid-item">
-            <div style="width: 100%; background-color: rgb(226, 13, 13); height: 2px; margin: 0rem; padding: 0;"></div>
-            <b>Profile</b>
+            <div class="redLien"></div>
+            <b class="title">Profile</b>
         </div>
-
+        
         <div class="grid-item">
-            <div style="text-align: justify;">
-
-                <table style="font-size: 1.7rem; width: 100%;">
-                    <tr>
-                        <th>이름</th>
-                        <td>이원혁</td>
-                        <th>생년월일</th>
-                        <td>1996.02.28</td>
-                    </tr>
-
-                    <tr>
-                        <th>MBTI</th>
-                        <td>ENTJ-A</td>
-                        <th>총 개발 경력</th>
-                        <td>3년 7개월</td>
-                    </tr>
-
-                    <tr>
-                        <th>연락처</th>
-                        <td>010-4081-7964</td>
-                        <th>이메일</th>
-                        <td colspan="3">qnwnen0228@gmail.com</td>
-                    </tr>
-                </table>
+            <div class="table">
+                <b>이름</b>
+                <a>이원혁</a>
+                <b>생년월일</b>
+                <a>1996.02.28</a>
+                <b>MBTI</b>
+                <a>ENTJ-A</a>
+                <b>총 개발 경력</b>
+                <a>3년 7개월</a>
+                <b>연락처</b>
+                <div>010-4081-7964</div>
+                <b>이메일</b>
+                <div>qnwnen0228@gmail.com</div>
             </div>
         </div>
 
     </div>
+
     <br>
 
     <div class="contents">
+        
         <div class="grid-item">
-            <div style="width: 100%; background-color: rgb(226, 13, 13); height: 2px; margin: 0rem; padding: 0;"></div>
-            <b>Skills</b>
+            <div class="redLien"></div>
+            <b class="title">Skills</b>
         </div>
-
+        
         <div class="grid-item">
             <table style="font-size: 1.7rem; width: 100%; text-align: justify;">
                 <tr>
                     <th>Languages</th>
                     <td>C#, XAML, HTML, Javascript, CSS, java, python</td>
                 </tr>
-
                 <tr>
                     <th>Framework</th>
                     <td>.NET, Spring, Django</td>
                 </tr>
-
                 <tr>
                     <tH>Database</tH>
                     <td>MongoDB, MySQL</td>
@@ -198,53 +228,68 @@
         </div>
 
     </div>
+
     <br>
 
     <div class="contents">
+        
         <div class="grid-item">
-            <div style="width: 100%; background-color: rgb(226, 13, 13); height: 2px; margin: 0rem; padding: 0;"></div>
-            <b>Work Experience</b>
+            <div class="redLien"></div>
+            <b class="title">Work Experience</b>
         </div>
+        
         <div class="grid-item">
             <div style="text-align: justify;">
+                
                 <p style="margin: 0;">
-                    <b>라미솔루션</b><a style="font-size: 1.7rem; float: right">(2022.11 ~ 2024.07 / 1년 9개월)</a>
+                    <b class="title">라미솔루션</b>
+                    <a class="period">(2022.11 ~ 2024.07 / 1년9개월)</a>
                 </p>
-
+                
                 <p style="font-size: 1.8rem; text-align: justify;">
                     <b>해외구매대행 솔루션</b><br>
                 </p>
-
+                
                 <ul style="font-size: initial;">
                     <li>해외 쇼핑몰 상품 데이터 대량 스크래핑 구현</li>
                     <li>국내 오픈마켓 API 연동</li>
                     <li>클라이언트 구현 및 유지보수</li>
                     <li>OCR, 이미지 번역 구현</li>
-                    <li>자사 홈페이지 개발 (<a style="color: black;"
-                            href="https://cash-data.co.kr/">https://cash-data.co.kr/</a>)</li>
+                    <li>자사 홈페이지 개발
+                        <a style="color: black;" target="_blank"
+                            href="https://cash-data.co.kr/">(https://cash-data.co.kr/)</a>
+                    </li>
                 </ul>
             </div>
+            
             <hr>
 
             <div style="text-align: justify;">
+                
                 <p style="margin: 0;">
-                    <b>메디터레이니언웍스</b><a style="font-size: 1.7rem; float: right">(2022.04 ~ 2024.08 / 5개월)</a>
+                    <b class="title">메디터레이니언웍스</b>
+                    <a class="period">(2022.04 ~ 2024.08 /5개월)</a>
                 </p>
-
+                
                 <p style="font-size: 1.8rem; text-align: justify;">
                     <b>SI 및 자사 솔루션</b><br>
                 </p>
-
+                
                 <ul style="font-size: initial;">
                     <li>기업용 응용프로그램 개발</li>
                     <li>웹 프론트엔드 개발</li>
                 </ul>
+                
             </div>
             <hr>
 
             <div style="text-align: justify;">
-                <b>하우소프트</b> <b style="color: gray; font-size: 2rem;">(현 라미솔루션)</b><a
-                    style="font-size: 1.7rem; float: right">(2020.05 ~ 2021.09 / 1년 5개월)</a>
+                
+                <b class="title">하우소프트</b>
+                
+                <b style="color: gray; font-size: 2rem;">(현 라미솔루션)</b>
+                
+                <a class="period">(2020.05 ~ 2021.09 / 1년 5개월)</a>
 
                 <p style="font-size: 1.8rem; text-align: justify;">
                     <b>해외구매대행 솔루션</b><br>
@@ -255,20 +300,28 @@
                     <li>국내 오픈마켓 API 연동</li>
                     <li>클라이언트 구현 및 유지보수</li>
                 </ul>
+
             </div>
         </div>
+
     </div>
+    
     <br>
 
     <div class="contents">
+        
         <div class="grid-item">
-            <div style="width: 100%; background-color: rgb(226, 13, 13); height: 2px; margin: 0rem; padding: 0;"></div>
-            <b>Education</b>
+            <div class="redLien"></div>
+            <b class="title">Education</b>
         </div>
+        
         <div class="grid-item">
+            
             <div style="text-align: justify;">
+                
                 <p style="margin: 0;">
-                    <b>소프트웨어 개발자 양성과정</b><a style="font-size: 1.7rem; float: right">(2019.09 ~ 2020.05 / 9개월)</a>
+                    <b class="title">소프트웨어 개발자 양성과정</b>
+                    <a class="period">(2019.09 ~ 2020.05 / 9개월)</a>
                 </p>
 
                 <p style="font-size: 1.8rem; text-align: justify;">
@@ -301,12 +354,15 @@
                     <li>관계형 데이터베이스에 대한 이해 및 SQL 습득, 동적 SQL, Package</li>
                     <li>DB도구등을 사용한 Database 모델링 (개념, 논리, 물리적 모델링)</li>
                 </ul>
+
             </div>
             <hr>
 
             <div style="text-align: justify;">
+                
                 <p style="margin: 0;">
-                    <b>SBS게임아카데미</b><a style="font-size: 1.7rem; float: right">(2018.09 ~ 2020.03 / 7개월)</a>
+                    <b class="title">SBS게임아카데미</b>
+                    <a class="period">(2018.09 ~ 2020.03 / 7개월)</a>
                 </p>
 
                 <p style="font-size: 1.8rem; text-align: justify;">
@@ -317,36 +373,45 @@
                     <li>기획 : 컨셉 기획, 시스템 기획, 레벨 디자인, 역기획서 작성</li>
                     <li>Unity를 활용한 MMORPG 구현</li>
                 </ul>
+
             </div>
+
         </div>
+
     </div>
+
     <br>
+
     <div class="contents">
+        
         <div class="grid-item">
-            <div style="width: 100%; background-color: rgb(226, 13, 13); height: 2px; margin: 0rem; padding: 0;"></div>
-            <b>Channal</b>
+            <div class="redLien"></div>
+            <b class="title">Channal</b>
         </div>
+        
         <div class="grid-item">
+            
             <div style="text-align: justify;">
+                
                 <p style="font-size: 1.8rem; text-align: justify;">
                     <b>GitHub : </b>
                     <a target="_blank" href="https://github.com/qnwnen22"
                         style="color: black;">https://github.com/qnwnen22</a><br>
                 </p>
+
                 <p style="font-size: 1.8rem; text-align: justify;">
                     <b>Nuget : </b>
                     <a target="_blank" href="https://www.nuget.org/packages/Moka"
                         style="color: black;">https://github.com/qnwnen22</a><br>
                 </p>
 
-
             </div>
+
         </div>
+
     </div>
 
-    <footer style="height: 20rem; background-color: #333333;">
-
-    </footer>
+    <footer style="height: 20rem; background-color: #333333;"></footer>
 
 </body>
 
