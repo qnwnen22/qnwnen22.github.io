@@ -25,7 +25,7 @@ function getMinStat(accessories, grindingCount) {
         case "earring":
             switch (grindingCount) {
                 case "0":
-                    result = 12400;
+                    result = 9861;
                     break;
                 case "1":
                     result = 10139;
