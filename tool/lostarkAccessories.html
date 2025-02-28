@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로스트아크 도구</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="../image/favicon.ico">
+</head>
+
+<body>
+    <nav class="menu">
+        <div style="float: left;">
+            <a href="/">개발자 이원혁</a>
+        </div>
+        <div style="float: right;">
+            <ul>
+                <li><a href="../download/main">다운로드</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="banner">
+
+    </div>
+
+    <table>
+        <tr>
+            <th>장신구 부위</th>
+            <th>연마 횟수</th>
+            <th>스탯(힘민지)</th>
+        </tr>
+        <tr>
+            <td>
+                <select id="accessories" onchange="getAccessoriesMinMaxStat()">
+                    <option value="necklace">목걸이</option>
+                    <option value="earring">귀걸이</option>
+                    <option value="ring">반지</option>
+                </select>
+            </td>
+            <td>
+                <select id="grindingCount" onchange="getAccessoriesMinMaxStat()">
+                    <option value="0">0연마</option>
+                    <option value="1">1연마</option>
+                    <option value="2">2연마</option>
+                    <option value="3" selected>3연마</option>
+                </select>
+            </td>
+            <td>
+                <input type="number" id="statValue" oninput="getAccessoriesStatValue()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>최소</p>
+                <p id="minStat"></p>
+            </td>
+            <td>
+                <p>최대</p>
+                <p id="maxStat"></p>
+            </td>
+            <td>
+                <p>결과 값</p>
+                <p id="result"></p>
+            </td>
+        </tr>
+    </table>
+
+    <script type="text/Javascript" src="../script/lostark.js"></script>
+</body>
+
+</html>
