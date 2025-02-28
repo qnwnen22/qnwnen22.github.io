@@ -161,7 +161,8 @@ function getAccessoriesStatValue() {
     } else {
         let val1 = statValue - minStat;
         let val2 = maxStat - minStat;
-        let result = (val1 / val2) * 100;
+        let cal =(val1 / val2) * 100;
+        let result = cal.toFixed(2);
         document.getElementById("result").innerText = result + "%";
     }
 }
