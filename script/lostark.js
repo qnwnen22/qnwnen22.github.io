@@ -132,41 +132,49 @@ function getMaxStat(accessories, grindingCount) {
     return result;
 }
 
-function getAccessoriesMinMaxStat() {
-    let accessories = document.getElementById("accessories").value;
-    let grindingCount = document.getElementById("grindingCount").value;
-    document.getElementById("minStat").innerText = getMinStat(accessories, grindingCount);
-    document.getElementById("maxStat").innerText = getMaxStat(accessories, grindingCount);
-}
-
 function getAccessoriesStatValue() {
 
     let accessories = document.getElementById("accessories").value;
     let grindingCount = document.getElementById("grindingCount").value;
     let statValue = document.getElementById("statValue").value;
+    let resultElement = document.getElementById("result");
 
     let minStat = getMinStat(accessories, grindingCount);
     if (minStat < 0) {
-        document.getElementById("result").innerText = "";
-        return;
+        resultElement.innerText = "";
     }
     let maxStat = getMaxStat(accessories, grindingCount);
     if (maxStat < 0) {
-        document.getElementById("result").innerText = "";
-        return;
+        resultElement.innerText = "";
     }
 
-    if (statValue < minStat || statValue > maxStat) {
-        document.getElementById("result").innerText = "";
-    } else {
+    document.getElementById("minStat").innerText = minStat;
+    document.getElementById("maxStat").innerText = maxStat;
+
+    if(statValue === ""){
+        resultElement.innerText = "";
+        resultElement.style.color = "black";
+        return;
+    }
+    
+
+    if (statValue < minStat) {
+        resultElement.innerText = "최소 값 미달";
+        resultElement.style.color = "red";
+    } else if (statValue > maxStat) {
+        resultElement.innerText = "최대 값 초과";
+        resultElement.style.color = "red";
+    }
+    else {
         let val1 = statValue - minStat;
         let val2 = maxStat - minStat;
-        let cal =(val1 / val2) * 100;
+        let cal = (val1 / val2) * 100;
         let result = cal.toFixed(2);
-        document.getElementById("result").innerText = result + "%";
+        resultElement.innerText = result + "%";
+        resultElement.style.color = "black";
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    getAccessoriesMinMaxStat();
+document.addEventListener("DOMContentLoaded", function () {
+    getAccessoriesStatValue();
 });

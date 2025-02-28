@@ -22,49 +22,62 @@
         </div>
     </nav>
 
-    <div class="banner"></div>
+    <div class="banner">
+        <div class="grid-item">
+            <h3 class="title"> 로스트아크 도구 모음 </h3>
+        </div>
+    </div>
 
-    <table style="font-size: 3rem;">
-        <tr>
-            <th>장신구 부위</th>
-            <th>연마 횟수</th>
-            <th>스탯(힘민지)</th>
-        </tr>
-        <tr>
-            <td>
-                <select id="accessories" onchange="getAccessoriesMinMaxStat()">
-                    <option value="necklace">목걸이</option>
-                    <option value="earring">귀걸이</option>
-                    <option value="ring">반지</option>
-                </select>
-            </td>
-            <td>
-                <select id="grindingCount" onchange="getAccessoriesMinMaxStat()">
-                    <option value="0">0연마</option>
-                    <option value="1">1연마</option>
-                    <option value="2">2연마</option>
-                    <option value="3" selected>3연마</option>
-                </select>
-            </td>
-            <td>
-                <input type="number" id="statValue" oninput="getAccessoriesStatValue()">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <p>최소</p>
-                <p id="minStat"></p>
-            </td>
-            <td>
-                <p>최대</p>
-                <p id="maxStat"></p>
-            </td>
-            <td>
-                <p>결과 값</p>
-                <p id="result"></p>
-            </td>
-        </tr>
-    </table>
+    <div class="contents">
+        
+        <div class="grid-item">
+            <div class="redLine"></div>
+            <b class="title">악세 힘민지 계산기</b>
+        </div>
+
+        <table style="font-size: 2rem;">
+            <tr>
+                <th>장신구 부위</th>
+                <th>연마 횟수</th>
+                <th>스탯(힘민지)</th>
+            </tr>
+            <tr>
+                <td>
+                    <select style="font-size: 2rem;" id="accessories" onchange="getAccessoriesStatValue()">
+                        <option value="necklace">목걸이</option>
+                        <option value="earring">귀걸이</option>
+                        <option value="ring">반지</option>
+                    </select>
+                </td>
+                <td>
+                    <select style="font-size: 2rem;" id="grindingCount" onchange="getAccessoriesStatValue()">
+                        <option value="0">0연마</option>
+                        <option value="1">1연마</option>
+                        <option value="2">2연마</option>
+                        <option value="3" selected>3연마</option>
+                    </select>
+                </td>
+                <td>
+                    <input style="font-size: 2rem;" type="number" id="statValue" oninput="getAccessoriesStatValue()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>최소</p>
+                    <p id="minStat"></p>
+                </td>
+                <td>
+                    <p>최대</p>
+                    <p id="maxStat"></p>
+                </td>
+                <td>
+                    <p>결과 값</p>
+                    <p id="result"></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
 
     <script type="text/Javascript" src="../script/lostark.js"></script>
 </body>
