@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로스트아크 도구</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="../image/favicon.ico">
+
+    <style>
+        .colon {
+            margin: 0px 5px 0px 5px;
+        }
+
+        fieldset {
+            margin: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="menu">
+        <div style="float: left;">
+            <a href="/">개발자 이원혁</a>
+        </div>
+        <div style="float: right;">
+            <ul>
+                <li><a href="../tool/lostarkAccessories">악세 힘민지 계산기</a></li>
+                <li><a href="../tool/lostArkPackageEfficiency">패키지 효율</a></li>
+                <li><a href="../download/main">다운로드</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div style="margin-top: 7rem; width: 100%; display: inline-block;">
+        <div style="text-align: right; font-size: 1.5rem;">
+            <b>API키: </b><input id="apiKey" type="text">
+            <button onclick="setItemPrice()">신규 가격 불러오기</button>
+        </div>
+    </div>
+
+    <div style="display: flex;">
+
+        <div>
+            <div style="display: flex;">
+                <image id="itemImage" src="https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_88.png"
+                    style="width: 50px; height: 50px; margin: 5px; background-color: black;" />
+                <div style="display: inline; margin: 5px;">
+                    <a style="font-size: 1.5rem; display: flex;">운명의 파괴석</a>
+                    <input id="item_66102006" name="item_66102006" style="font-size: 2rem;" type="number" value="3.29">
+                </div>
+            </div>
+
+            <div style="display: flex;">
+                <image id="itemImage" src="https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_89.png"
+                    style="width: 50px; height: 50px; margin: 5px; background-color: black;" />
+                <div style="display: inline; margin: 5px;">
+                    <a style="font-size: 1.5rem; display: flex;">운명의 수호석</a>
+                    <input id="item_66102106" name="item_66102106" style="font-size: 2rem;" type="number" value="0.22">
+                </div>
+            </div>
+
+            <div style="display: flex;">
+                <image id="itemImage" src="https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_85.png"
+                    style="width: 50px; height: 50px; margin: 5px; background-color: black;" />
+                <div style="display: inline; margin: 5px;">
+                    <a style="font-size: 1.5rem; display: flex;">운명의 돌파석</a>
+                    <input id="item_66110225" name="item_66110225" style="font-size: 2rem;" type="number" value="33.4">
+                </div>
+            </div>
+
+            <div style="display: flex;">
+                <image id="itemImage" src="https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_93.png"
+                    style="width: 50px; height: 50px; margin: 5px; background-color: black;" />
+                <div style="display: inline; margin: 5px;">
+                    <a style="font-size: 1.5rem; display: flex;">운명의 파편</a>
+                    <input id="item_66130141" name="item_66130141" style="font-size: 2rem;" type="number" value="0.186">
+                </div>
+            </div>
+
+            <div style="display: flex;">
+                <image id="itemImage" src="https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_86.png"
+                    style="width: 50px; height: 50px; margin: 5px; background-color: black;" />
+                <div style="display: inline; margin: 5px;">
+                    <a style="font-size: 1.5rem; display: flex;">아비도스 융화 재료</a>
+                    <input id="item_6861012" name="item_6861012" style="font-size: 2rem;" type="number" value="74">
+                </div>
+            </div>
+
+            <div style="display: flex;">
+                <image id="itemImage" src="https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_171.png"
+                    style="width: 50px; height: 50px; margin: 5px; background-color: black;" />
+                <div style="display: inline; margin: 5px;">
+                    <a style="font-size: 1.5rem; display: flex;">용암의 숨결</a>
+                    <input id="item_66111131" name="item_66111131" style="font-size: 2rem;" type="number" value="533.5">
+                </div>
+            </div>
+
+            <div style="display: flex;">
+                <image id="itemImage" src="https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_172.png"
+                    style="width: 50px; height: 50px; margin: 5px; background-color: black;" />
+                <div style="display: inline; margin: 5px;">
+                    <a style="font-size: 1.5rem; display: flex;">빙하의 숨결</a>
+                    <input id="item_66111132" name="item_66111132" style="font-size: 2rem;" type="number" value="170.3">
+                </div>
+            </div>
+
+            <hr>
+
+            <div style="display: flex;">
+                <img id="itemImage" src="../image/골드.png"
+                    style="width: 50px; height: 50px; margin: 5px; background-color: black;" />
+
+                <div style="display: flex; width: 100%; flex-direction: column; justify-content: center; margin: 5px;">
+                    <a style="font-size: 1.5rem; display: flex;">골드 시세</a>
+
+                    <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+                        <input id="goldRatio" style="font-size: 2rem; width: 11.3rem; text-align: center;" type="number"
+                            value="100">
+                        <b style="font-size: 2rem; margin: 0 0.2rem;">:</b>
+                        <input id="cashRatio" style="font-size: 2rem; width: 11.3rem; text-align: center;" type="number"
+                            value="25">
+                    </div>
+                </div>
+
+            </div>
+            <div style="display: flex;">
+                <input type="button" value="효율 계산" style="width: 100%; font-size: 1.5rem;" onclick="calPackageValue()">
+            </div>
+        </div>
+
+        <div style="text-align: left;">
+
+            <div style="display: inline-flex; margin: 5px;">
+                <image src="../image/[월간] T4 융화&파괴,수호 패키지.png" style="margin: 5px; max-height: 250px; width: auto;" />
+                <div style="margin: 5px;">
+                    <b style="font-size: 2.5rem; display: flex;">[월간] T4 융화&파괴/수호 패키지</b>
+                    <div class="redLine"></div>
+
+                    <fieldset>
+                        <legend style="text-align: justify; font-size: 2rem;">선택</legend>
+
+                        <b style="font-size: 2rem; display: flex;">운명의 파괴석
+                            <a class="colon">:</a>
+                            <a id="stock_66102006" name="stock_66102006">30000</a>개
+                            <a class="colon">/</a>
+                            <a id="value_66102006" name="value_66102006"></a>g
+                        </b>
+
+                        <b style="font-size: 2rem; display: flex;">운명의 수호석
+                            <a class="colon">:</a>
+                            <a id="stock_66102106" name="stock_66102106">100000</a>개
+                            <a class="colon">/</a>
+                            <a id="value_66102106" name="value_66102106"></a>g
+                        </b>
+                    </fieldset>
+
+                    <fieldset>
+                        <b style="font-size: 2rem; display: flex;">아비도스 융화 재료
+                            <a class="colon">:</a>
+                            <a id="stock_6861012" name="stock_6861012">1000</a>개
+                            <a class="colon">/</a>
+                            <a id="value_6861012" name="value_6861012"></a>g
+                        </b>
+                    </fieldset>
+
+                    <fieldset>
+                        <b style="font-size: 2rem; display: flex;">현금 대비 골드 가치
+                            <a class="colon">:</a>
+                            <a id="mouthPackage_33000" name="mouthPackage_33000"></a>g
+                        </b>
+
+                        <b style="font-size: 2rem; display: flex;">운명의 파괴석(선택)
+                            <a class="colon">:</a>
+                            <a id="mouthPackage_66102006_6861012" name="mouthPackage_66102006_6861012"></a>g
+                        </b>
+
+                        <b style="font-size: 2rem; display: flex;">운명의 수호석(선택)
+                            <a class="colon">:</a>
+                            <a id="mouthPackage_66102106_6861012" name="mouthPackage_66102106_6861012"></a>g
+                        </b>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend style="text-align: justify; font-size: 2rem;">효율 대비 이득 골드</legend>
+
+                        <b style="font-size: 2rem; display: flex;">운명의 파괴석(선택)
+                            <a class="colon">:</a>
+                            <a id="calResult_66102006_6861012" name="calResult_66102006_6861012"></a>g
+                        </b>
+
+                        <b style="font-size: 2rem; display: flex;">운명의 수호석(선택)
+                            <a class="colon">:</a>
+                            <a id="calResult_66102106_6861012" name="calResult_66102106_6861012"></a>g
+                        </b>
+                    </fieldset>
+
+                </div>
+            </div>
+
+            <div style="display: inline-flex; margin: 5px;">
+                <image src="../image/[월간] T4 파편&보조 재료 패키지.png" style="margin: 5px; max-height: 250px; width: auto;" />
+                <div style="margin: 5px;">
+                    <b style="font-size: 2.5rem; display: flex;">[월간] T4 파편&보조 재료 패키지</b>
+                    <div class="redLine"></div>
+
+                    <fieldset>
+                        <legend style="text-align: justify; font-size: 2rem;">선택</legend>
+
+                        <b style="font-size: 2rem; display: flex;">용암의 숨결
+                            <a class="colon">:</a>
+                            <a id="stock_66111131" name="stock_66111131">250</a>개
+                            <a class="colon">/</a>
+                            <a id="value_66111131" name="value_66111131"></a>g
+                        </b>
+
+                        <b style="font-size: 2rem; display: flex;">빙하의 숨결
+                            <a class="colon">:</a>
+                            <a id="stock_66111132" name="stock_66111132">1000</a>개
+                            <a class="colon">/</a>
+                            <a id="value_66111132" name="value_66111132"></a>g
+                        </b>
+                    </fieldset>
+
+                    <fieldset>
+                        <b style="font-size: 2rem; display: flex;">운명의 파편
+                            <a class="colon">:</a>
+                            <a id="stock_66130141" name="stock_66130141">150000</a>개
+                            <a class="colon">/</a>
+                            <a id="value_66130141" name="value_66130141"></a>g
+                        </b>
+                    </fieldset>
+
+                    <fieldset>
+                        <b style="font-size: 2rem; display: flex;">현금 대비 골드 가치
+                            <a class="colon">:</a>
+                            <a id="mouthPackage_33000" name="mouthPackage_33000"></a>g
+                        </b>
+
+                        <b style="font-size: 2rem; display: flex;">용암의 숨결(선택)
+                            <a class="colon">:</a>
+                            <a id="mouthPackage_66111131_66130141" name="mouthPackage_66111131_66130141"></a>g
+                        </b>
+
+                        <b style="font-size: 2rem; display: flex;">빙하의 숨결(선택)
+                            <a class="colon">:</a>
+                            <a id="mouthPackage_66111132_66130141" name="mouthPackage_66111132_66130141"></a>g
+                        </b>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend style="text-align: justify; font-size: 2rem;">효율 대비 이득 골드</legend>
+
+                        <b style="font-size: 2rem; display: flex;">용암의 숨결(선택)
+                            <a class="colon">:</a>
+                            <a id="calResult_66111131_66130141" name="calResult_66111131_66130141"></a>g
+                        </b>
+
+                        <b style="font-size: 2rem; display: flex;">빙하의 숨결(선택)
+                            <a class="colon">:</a>
+                            <a id="calResult_66111132_66130141" name="calResult_66111132_66130141"></a>g
+                        </b>
+                    </fieldset>
+
+                </div>
+            </div>
+
+            <div style="display: inline-flex; margin: 5px;">
+                <image src="../image/[월간] T4 돌파&융화 패키지.png" style="margin: 5px; max-height: 250px; width: auto;" />
+                <div style="margin: 5px;">
+                    <b style="font-size: 2.5rem; display: flex;">[월간] T4 돌파&융화 패키지</b>
+                    <div class="redLine"></div>
+
+                    <fieldset>
+                        <b style="font-size: 2rem; display: flex;">운명의 돌파석
+                            <a class="colon">:</a>
+                            <a id="stock_66110225" name="stock_66110225">2000</a>개
+                            <a class="colon">/</a>
+                            <a id="value_66110225" name="value_66110225"></a>g
+                        </b>
+                    </fieldset>
+
+                    <fieldset>
+                        <b style="font-size: 2rem; display: flex;">아비도스 융화 재료
+                            <a class="colon">:</a>
+                            <a id="stock_6861012" name="stock_6861012">1000</a>개
+                            <a class="colon">/</a>
+                            <a id="value_6861012" name="value_6861012"></a>g
+                        </b>
+                    </fieldset>
+
+                    <fieldset>
+                        <b style="font-size: 2rem; display: flex;">현금 대비 골드 가치
+                            <a class="colon">:</a>
+                            <a id="mouthPackage_33000" name="mouthPackage_33000"></a>g
+                        </b>
+
+                        <b style="font-size: 2rem; display: flex;">총 패키지 가치
+                            <a class="colon">:</a>
+                            <a id="mouthPackage_66110225_6861012" name="mouthPackage_66110225_6861012"></a>g
+                        </b>
+                    </fieldset>
+
+                    <fieldset>
+                        <b style="font-size: 2rem; display: flex;">효율 대비 이득 골드
+                            <a class="colon">:</a>
+                            <a id="calResult_66110225_6861012" name="calResult_66110225_6861012"></a>g
+                        </b>
+                    </fieldset>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let itemDatas = [
+            { "id": "66102006", "name": "운명의 파괴석", "bundle": "10" },
+            { "id": "66102106", "name": "운명의 수호석", "bundle": "10" },
+            { "id": "66110225", "name": "운명의 돌파석", "bundle": "1" },
+            { "id": "66130141", "name": "운명의 파편 주머니(소)", "bundle": "1000" },
+            { "id": "6861012", "name": "아비도스 융화 재료", "bundle": "1" },
+            { "id": "66111131", "name": "용암의 숨결", "bundle": "1" },
+            { "id": "66111132", "name": "빙하의 숨결", "bundle": "1" }
+        ];
+
+        let packageDatas = [
+            "mouthPackage_66102006_6861012",
+            "mouthPackage_66102106_6861012",
+            "mouthPackage_66111131_66130141",
+            "mouthPackage_66111132_66130141",
+            "mouthPackage_66110225_6861012"
+        ];
+
+        let packageCashValues = [
+            "mouthPackage_33000",
+        ];
+
+        function calPackageValue() {
+
+            itemDatas.forEach(itemData => {
+                try {
+                    let id = itemData.id;
+                    let stock = document.getElementById("stock_" + id).innerText;
+                    let item = document.getElementById("item_" + id).value;
+                    let x = parseFloat(stock);
+                    let y = parseFloat(item);
+                    let calPrice = x * y;
+                    document.getElementById("value_" + id).innerText = calPrice;
+                    let tags = document.getElementsByName("value_" + id);
+                    tags.forEach(tag => {
+                        tag.innerText = calPrice;
+                    });
+                }
+                catch (error) {
+                    console.error(error);
+                }
+            });
+
+            packageCashValues.forEach(packageCashValue => {
+
+                let gold = document.getElementById("goldRatio").value;
+                let cash = document.getElementById("cashRatio").value;
+
+                let splits = packageCashValue.split("_");
+                let calResult = parseFloat(splits[1]) * parseFloat(gold) / parseFloat(cash);
+
+                document.getElementsByName(packageCashValue).forEach(element => {
+                    element.innerText = calResult;
+                });
+            });
+
+            packageDatas.forEach(packageDatas => {
+
+                let splits = packageDatas.split('_');
+
+                let result = 0;
+
+                for (let i = 1; i < splits.length; i++) {
+                    let split = splits[i];
+
+                    var pricaValue = document.getElementById("value_" + split).innerText;
+                    result += parseFloat(pricaValue);
+                }
+
+                let codeArray = splits.slice(1);
+                let codes = codeArray.join("_");
+
+                document.getElementById(packageDatas).innerText = result;
+
+                let packageDataTags = document.getElementsByName(packageDatas);
+                packageDataTags.forEach(x => { x.innerText = result; });
+
+                let packagePrice = parseFloat(document.getElementById("mouthPackage_33000").innerText);
+                let diff = result - packagePrice;
+
+                let calResultTag = document.getElementById("calResult_" + codes);
+                calResultTag.innerText = diff;
+                if (diff > 0) {
+                    calResultTag.style.color = "blue";
+                } else {
+                    calResultTag.style.color = "red";
+                }
+
+            });
+        }
+
+        function setItemPrice() {
+
+            let apiKey = document.getElementById("apiKey").value;
+            if (apiKey === "") return;
+
+            for (let i = 0; i < itemDatas.length; i++) {
+
+                let itemData = itemDatas[i];
+
+                fetch("https://developer-lostark.game.onstove.com/markets/items", {
+                    method: "POST",
+                    headers: {
+                        "Accept": "application/json",
+                        "Authorization": "bearer " + apiKey,
+                        "Content-Type": "application/json"  // 올바른 Content-Type 키
+                    },
+                    body: JSON.stringify({
+                        "Sort": "GRADE",
+                        "CategoryCode": 50000,
+                        "CharacterClass": "",
+                        "ItemTier": null,
+                        "ItemGrade": "",
+                        "ItemName": itemData.name,
+                        "PageNo": 0,
+                        "SortCondition": "DESC"
+                    })
+                })
+                    .then(response => response.json())  // 응답을 JSON으로 변환
+                    .then(data => {
+                        if (data.Items && data.Items.length > 0) {
+                            let yDayAvgPrice = data.Items[0].YDayAvgPrice / itemData.bundle;  // JSON 데이터에서 값 추출
+                            let price = parseFloat(yDayAvgPrice.toFixed(4));
+                            document.getElementById("item_" + itemData.id).value = price;
+                        } else {
+                            isSuccess = isSuccess && false;
+                            // console.error("아이템 데이터를 찾을 수 없습니다.");
+                        }
+                    })
+                    .catch(error => console.error("API 호출 중 오류 발생:", error)); // 오류 처리
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            calPackageValue();
+            setItemPrice();
+        });
+    </script>
+
+</body>
+
+</html>
