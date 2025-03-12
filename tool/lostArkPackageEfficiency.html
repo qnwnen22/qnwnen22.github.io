@@ -43,7 +43,8 @@
 
     <div style="display: flex;">
 
-        <div>
+        <div style="max-width: 32rem;">
+
             <div style="display: flex;">
                 <image id="itemImage" src="https://cdn-lostark.game.onstove.com/efui_iconatlas/use/use_12_88.png"
                     style="width: 50px; height: 50px; margin: 5px; background-color: black;" />
@@ -126,9 +127,18 @@
                 </div>
 
             </div>
-            <div style="display: flex;">
+            
+            <div>
                 <input type="button" value="효율 계산" style="width: 100%; font-size: 1.5rem;" onclick="calPackageValue()">
+                <b style="font-size: 1.5rem; color: red; width: 100%;">
+                    ※주의 사항 : <br>
+                    미리 입력된 가격은 2025.03.11 기준 가격입니다.<br>
+                    정확한 가격이 필요할 경우 API키를 사용하여 신규 가격을 불러오거나 수기로 입력해주세요.
+                </b>
             </div>
+
+           
+
         </div>
 
         <div style="text-align: left;">
