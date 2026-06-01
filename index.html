@@ -4,13 +4,642 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>개인 이력서</title>
-    <meta http-equiv="refresh" content="0; url=tool/resume.html">
-    <link rel="canonical" href="tool/resume.html">
+    <title>개인 이력서 | Developer Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f4f4f4;
+            --bg-soft: #ffffff;
+            --panel: #ffffff;
+            --line: #d7d7d7;
+            --text: #111111;
+            --text-muted: #5f5f5f;
+            --point: #111111;
+            --chip: #f2f2f2;
+            --chip-border: #cdcdcd;
+            --shadow: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 15% 20%, #e7e7e7 0%, transparent 30%),
+                radial-gradient(circle at 85% 80%, #efefef 0%, transparent 25%),
+                linear-gradient(140deg, var(--bg), var(--bg-soft));
+            color: var(--text);
+            font-family: "IBM Plex Sans KR", sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .texture {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: linear-gradient(transparent 95%, rgba(0, 0, 0, 0.2) 95%);
+            background-size: 100% 5px;
+            mix-blend-mode: soft-light;
+            z-index: 0;
+        }
+
+        .resume {
+            position: relative;
+            z-index: 1;
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 4.5rem 1.5rem 3.5rem;
+        }
+
+        .quick-nav {
+            position: sticky;
+            top: 0.75rem;
+            z-index: 3;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            padding: 0.65rem;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(7px);
+        }
+
+        .quick-nav a {
+            color: #111111;
+            text-decoration: none;
+            font-size: 0.84rem;
+            border: 1px solid #c9c9c9;
+            border-radius: 999px;
+            padding: 0.35rem 0.72rem;
+            transition: background-color 0.18s ease, border-color 0.18s ease;
+        }
+
+        .quick-nav a:hover {
+            background: #f0f0f0;
+            border-color: #a9a9a9;
+        }
+
+        .hero {
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(248, 248, 248, 0.92));
+            padding: 2.2rem;
+            box-shadow: 0 18px 45px var(--shadow);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: rise 0.8s ease forwards;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 0.8rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 5vw, 3.3rem);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            margin: 1rem 0 0;
+            color: #333333;
+            max-width: 760px;
+            font-size: clamp(0.98rem, 2.1vw, 1.1rem);
+        }
+
+        .hero-meta {
+            margin-top: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .meta-pill {
+            display: inline-block;
+            padding: 0.35rem 0.65rem;
+            border-radius: 999px;
+            border: 1px solid #cbcbcb;
+            background: #f8f8f8;
+            font-size: 0.82rem;
+            color: #2f2f2f;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.75rem;
+        }
+
+        .profile-item {
+            border: 1px solid #d3d3d3;
+            border-radius: 10px;
+            background: #fcfcfc;
+            padding: 0.8rem;
+        }
+
+        .profile-label {
+            margin: 0;
+            font-size: 0.82rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #666666;
+        }
+
+        .profile-value {
+            margin: 0.25rem 0 0;
+            font-size: 1rem;
+            color: #111111;
+            word-break: break-word;
+        }
+
+        .profile-value a {
+            color: #111111;
+            text-decoration: none;
+            border-bottom: 1px solid #8f8f8f;
+        }
+
+        .section {
+            margin-top: 1.8rem;
+            padding: 1.5rem;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: var(--panel);
+            opacity: 0;
+            transform: translateY(18px);
+            animation: rise 0.8s ease forwards;
+            scroll-margin-top: 5rem;
+        }
+
+        .section:nth-of-type(2) {
+            animation-delay: 0.18s;
+        }
+
+        .section:nth-of-type(3) {
+            animation-delay: 0.32s;
+        }
+
+        .section-title {
+            margin: 0 0 1rem;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.3rem;
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+
+        .section-title::before {
+            content: "";
+            width: 26px;
+            height: 2px;
+            background: var(--point);
+            border-radius: 99px;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+        }
+
+        .chip {
+            background: var(--chip);
+            border: 1px solid var(--chip-border);
+            border-radius: 999px;
+            padding: 0.5rem 0.85rem;
+            font-size: 0.92rem;
+            color: #1f1f1f;
+            white-space: nowrap;
+            transform: translateY(8px);
+            opacity: 0;
+            animation: pop 0.5s ease forwards;
+        }
+
+        .chip:nth-child(1) {
+            animation-delay: 0.45s;
+        }
+
+        .chip:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .chip:nth-child(3) {
+            animation-delay: 0.55s;
+        }
+
+        .chip:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .chip:nth-child(5) {
+            animation-delay: 0.65s;
+        }
+
+        .chip:nth-child(6) {
+            animation-delay: 0.7s;
+        }
+
+        .chip:nth-child(7) {
+            animation-delay: 0.75s;
+        }
+
+        .chip:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+
+        .chip:nth-child(9) {
+            animation-delay: 0.85s;
+        }
+
+        .chip:nth-child(10) {
+            animation-delay: 0.9s;
+        }
+
+        .focus-list {
+            margin: 0;
+            padding-left: 1.2rem;
+            display: grid;
+            gap: 0.6rem;
+        }
+
+        .focus-list li {
+            color: #202020;
+        }
+
+        .intro-copy {
+            display: grid;
+            gap: 0.9rem;
+        }
+
+        .intro-copy p {
+            margin: 0;
+            color: #252525;
+            font-size: 0.98rem;
+            line-height: 1.85;
+            word-break: keep-all;
+            max-width: 94ch;
+        }
+
+        .split-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .career-group {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .career-card {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 1rem;
+            background: #fbfbfb;
+        }
+
+        .career-company {
+            margin: 0;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #111111;
+        }
+
+        .career-role {
+            margin: 0.35rem 0 0.7rem;
+            color: #464646;
+            font-size: 0.95rem;
+        }
+
+        .career-list,
+        .refactor-list,
+        .market-list {
+            margin: 0;
+            padding-left: 1.2rem;
+            display: grid;
+            gap: 0.45rem;
+        }
+
+        .career-list li,
+        .refactor-list li,
+        .market-list li {
+            color: #1f1f1f;
+        }
+
+        .subheading {
+            margin: 1rem 0 0.55rem;
+            font-size: 0.93rem;
+            color: #5f5f5f;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .expand-wrap {
+            margin-top: 0.9rem;
+            border: 1px solid #d3d3d3;
+            border-radius: 10px;
+            background: #ffffff;
+            overflow: hidden;
+        }
+
+        .expand-wrap summary {
+            cursor: pointer;
+            list-style: none;
+            padding: 0.8rem 0.9rem;
+            color: #171717;
+            font-weight: 500;
+            border-bottom: 1px solid #d8d8d8;
+        }
+
+        .expand-wrap summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .expand-content {
+            padding: 0.9rem;
+        }
+
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .market-box {
+            border: 1px solid #d4d4d4;
+            border-radius: 10px;
+            padding: 0.85rem;
+            background: #ffffff;
+        }
+
+        .market-title {
+            margin: 0 0 0.45rem;
+            color: #111111;
+            font-size: 0.93rem;
+        }
+
+        .footer-note {
+            margin-top: 2.2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pop {
+            from {
+                opacity: 0;
+                transform: translateY(10px) scale(0.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resume {
+                padding-top: 2.7rem;
+            }
+
+            .quick-nav {
+                top: 0.4rem;
+            }
+
+            .hero,
+            .section {
+                border-radius: 14px;
+                padding: 1.25rem;
+            }
+
+            .section-title {
+                font-size: 1.15rem;
+            }
+
+            .market-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .split-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <p>이력서 페이지로 이동 중입니다: <a href="tool/resume.html">tool/resume.html</a></p>
+    <div class="texture" aria-hidden="true"></div>
+
+    <main class="resume">
+        <nav class="quick-nav" aria-label="이력서 섹션 바로가기">
+            <a href="#profile-title">개인정보</a>
+            <a href="#intro-title">자기소개</a>
+            <a href="#stack-title">기술스택</a>
+            <a href="#focus-title">주요기술</a>
+            <a href="#career-title">주요경력</a>
+        </nav>
+
+        <section class="hero">
+            <span class="eyebrow">PERSONAL RESUME</span>
+            <h1>문제를 구조화하고<br>서비스로 완성하는 개발자</h1>
+            <p>
+                데이터 수집부터 API 통합, OCR 기반 이미지 번역, 레거시 개선까지
+                실제 운영 환경에서 필요한 기술을 중심으로 제품을 설계하고 구현합니다.
+            </p>
+            <div class="hero-meta">
+                <span class="meta-pill">경력 5년</span>
+                <span class="meta-pill">Full Stack</span>
+                <span class="meta-pill">E-commerce Domain</span>
+                <span class="meta-pill">Scraping / API / Refactoring</span>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="profile-title">
+            <h2 class="section-title" id="profile-title">개인정보</h2>
+            <div class="profile-grid">
+                <div class="profile-item">
+                    <p class="profile-label">이름</p>
+                    <p class="profile-value">이원혁</p>
+                </div>
+                <div class="profile-item">
+                    <p class="profile-label">생년월일</p>
+                    <p class="profile-value">1996.02.28</p>
+                </div>
+                <div class="profile-item">
+                    <p class="profile-label">전화번호</p>
+                    <p class="profile-value"><a href="tel:01040817964">010-4081-7964</a></p>
+                </div>
+                <div class="profile-item">
+                    <p class="profile-label">메일</p>
+                    <p class="profile-value"><a href="mailto:qnwnen0228@gmail.com">qnwnen0228@gmail.com</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="intro-title">
+            <h2 class="section-title" id="intro-title">자기소개</h2>
+            <div class="intro-copy">
+                <p>저는 5년간 다양한 환경에서 웹 및 데스크톱 애플리케이션을 개발해 온 개발자입니다. C#과 JavaScript를 중심으로 .NET Framework, ASP.NET Core, Vue.js를 활용한 서비스 개발 경험을 보유하고 있으며, WinForms와 WPF를 이용한 업무용 프로그램 개발부터 웹 서비스 구축까지 폭넓은 프로젝트를 수행해 왔습니다.</p>
+
+                <p>개발 업무를 수행하면서 가장 중요하게 생각하는 것은 안정적인 서비스 제공과 문제 해결 능력입니다. 새로운 기능을 구현하는 것뿐만 아니라 기존 시스템을 분석하고 개선하여 사용자에게 더 나은 경험을 제공하는 데 집중해 왔습니다. 특히 요구사항을 정확하게 이해하고 이를 실제 서비스에 반영하는 과정에서 개발자와 사용자 사이의 간극을 줄이는 것을 중요하게 생각합니다.</p>
+
+                <p>백엔드 개발에서는 C# 기반의 .NET Framework 및 ASP.NET Core 환경에서 API와 비즈니스 로직을 구현하였으며, MySQL, MongoDB, Redis를 활용하여 데이터 저장 및 캐시 구조를 설계하고 운영한 경험이 있습니다. 프론트엔드에서는 Vue.js와 JavaScript를 활용하여 사용자 인터페이스를 개발하고, 백엔드와의 연동을 통해 완성도 높은 서비스를 구축하였습니다. 또한 WinForms와 WPF를 이용한 데스크톱 애플리케이션 개발 경험을 통해 다양한 환경에서 요구되는 기술적 문제를 해결해 왔습니다.</p>
+
+                <p>저는 기술 변화에 대한 적응력이 높고 새로운 분야를 학습하는 것을 즐기는 개발자입니다. 최근에는 AI 기술이 소프트웨어 개발 환경에 빠르게 적용되고 있는 만큼, 개발 생산성을 높이고 서비스에 새로운 가치를 제공할 수 있는 AI 활용 방안에 관심을 가지고 학습하고 있습니다. 단순히 현재의 기술에 머무르지 않고 지속적으로 성장하며 더 나은 서비스를 만드는 개발자가 되고자 노력하고 있습니다.</p>
+
+                <p>앞으로도 다양한 기술 경험과 문제 해결 능력을 바탕으로 조직의 목표 달성에 기여하고, 사용자에게 실질적인 가치를 제공할 수 있는 개발자로 성장해 나가겠습니다.</p>
+            </div>
+        </section>
+
+        <div class="split-grid">
+            <section class="section" aria-labelledby="stack-title">
+                <h2 class="section-title" id="stack-title">기술스택 키워드</h2>
+                <div class="chips">
+                    <span class="chip">C#</span>
+                    <span class="chip">javascript</span>
+                    <span class="chip">.NET Framework</span>
+                    <span class="chip">Vue JS</span>
+                    <span class="chip">Winfrom</span>
+                    <span class="chip">WPF</span>
+                    <span class="chip">ASP.NET Core</span>
+                    <span class="chip">MongoDB</span>
+                    <span class="chip">Redis</span>
+                    <span class="chip">MySQL</span>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="focus-title">
+                <h2 class="section-title" id="focus-title">주요기술</h2>
+                <ul class="focus-list">
+                    <li>대량 데이터 스크래핑</li>
+                    <li>API 연동</li>
+                    <li>OCR 이미지 번역</li>
+                    <li>레거시 코드 리펙토링</li>
+                    <li>시스템 설계</li>
+                    <li>프론트엔드 개발</li>
+                    <li>백엔드 개발</li>
+                </ul>
+            </section>
+        </div>
+
+        <section class="section" aria-labelledby="career-title">
+            <h2 class="section-title" id="career-title">주요경력</h2>
+
+            <div class="career-group">
+                <article class="career-card">
+                    <h3 class="career-company">라미솔루션 (前 하우소프트)</h3>
+                    <p class="career-role">Winform, WPF를 활용한 이커머스 솔루션 개발</p>
+                    <ul class="career-list">
+                        <li>알리익스프레스, 아마존, 타오바오 등 해외 쇼핑몰의 상품 데이터를 대량 수집하여 국내 오픈마켓에 등록하는 솔루션 개발</li>
+                        <li>사이트 RestAPI 통신 패킷 및 취약점 분석을 통해 대량 상품 데이터 수집 기능 고도화</li>
+                        <li>국내 오픈마켓 API 연동 기반의 대량 상품 관리 기능 구현</li>
+                        <li>텍스트 및 이미지 번역 등 데이터 가공 업무 경험 보유</li>
+                    </ul>
+                </article>
+
+                <article class="career-card">
+                    <h3 class="career-company">(주)디에이티에스 (前 주식회사에루샤)</h3>
+                    <p class="career-role">Vue JS, ASP.NET Core를 활용한 이커머스 솔루션 풀스택 개발</p>
+                    <ul class="career-list">
+                        <li>외주 개발 레거시 프로젝트의 시스템 분석 및 코드 리펙토링 주도</li>
+                        <li>비효율적이고 재사용이 어려운 하드코딩 시스템을 개선해 생산성과 유지보수성 향상</li>
+                    </ul>
+
+                    <p class="subheading">리펙토링 리스트</p>
+                    <ol class="refactor-list">
+                        <li>사이트별 switch/case 하드코딩 수집 로직을 인터페이스 기반으로 추상화하고 전략 패턴을 반영해 사이트 확장성 확보</li>
+                        <li>MongoDB 다중 컬렉션 문서 간 논리 관계와 비효율 CRUD 구조를 개선하여 성능 및 데이터 일관성 향상</li>
+                        <li>불안정하게 운영되던 Redis session 시스템을 전면 개선해 서비스 안정성 강화</li>
+                        <li>국내외 쇼핑몰 대상 데이터 스크래핑 작업 다수 수행</li>
+                    </ol>
+
+                    <details class="expand-wrap">
+                        <summary>스크래핑 수행 사이트 상세 보기</summary>
+                        <div class="expand-content">
+                            <div class="market-grid">
+                                <div class="market-box">
+                                    <p class="market-title">해외</p>
+                                    <ul class="market-list">
+                                        <li>알리익스프레스</li>
+                                        <li>아마존</li>
+                                        <li>타오바오</li>
+                                        <li>라쿠텐</li>
+                                        <li>1688</li>
+                                        <li>코스트코</li>
+                                        <li>이베이</li>
+                                        <li>VVIC</li>
+                                        <li>Boticinal</li>
+                                        <li>Breuninger</li>
+                                        <li>Etsy</li>
+                                        <li>Farfetch</li>
+                                        <li>Healthylife</li>
+                                        <li>Idealo</li>
+                                        <li>Mytheresa</li>
+                                        <li>Selfridges</li>
+                                        <li>샵사이먼</li>
+                                        <li>Vitacost</li>
+                                        <li>Walmart</li>
+                                        <li>Zurbrueggen</li>
+                                    </ul>
+                                </div>
+
+                                <div class="market-box">
+                                    <p class="market-title">국내</p>
+                                    <ul class="market-list">
+                                        <li>네이버쇼핑</li>
+                                        <li>무신사</li>
+                                        <li>지마켓</li>
+                                        <li>롯데온</li>
+                                        <li>신세계</li>
+                                        <li>올리브영</li>
+                                        <li>도매매</li>
+                                        <li>패션플러스</li>
+                                        <li>대한민국농수산</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                </article>
+            </div>
+        </section>
+
+        <p class="footer-note">Last Updated: 2026.06.01</p>
+    </main>
 </body>
 
 </html>
