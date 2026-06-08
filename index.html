@@ -41,6 +41,10 @@
             overflow-x: hidden;
         }
 
+        html {
+            scroll-padding-top: 7rem;
+        }
+
         .texture {
             position: fixed;
             inset: 0;
@@ -204,6 +208,7 @@
             display: flex;
             align-items: center;
             gap: 0.7rem;
+            scroll-margin-top: 7rem;
         }
 
         .section-title::before {
@@ -314,6 +319,101 @@
             border-radius: 12px;
             padding: 1rem;
             background: #fbfbfb;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .portfolio-card {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 1rem;
+            background: #fbfbfb;
+        }
+
+        .portfolio-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .portfolio-name {
+            margin: 0;
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: #111111;
+        }
+
+        .portfolio-period {
+            margin: 0.25rem 0 0;
+            color: #5a5a5a;
+            font-size: 0.92rem;
+        }
+
+        .portfolio-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 0.5rem;
+        }
+
+        .portfolio-links a {
+            display: inline-flex;
+            align-items: center;
+            min-height: 2.15rem;
+            padding: 0.35rem 0.65rem;
+            border: 1px solid #c7c7c7;
+            border-radius: 999px;
+            color: #111111;
+            background: #ffffff;
+            text-decoration: none;
+            font-size: 0.84rem;
+            white-space: nowrap;
+            transition: background-color 0.18s ease, border-color 0.18s ease;
+        }
+
+        .portfolio-links a:hover {
+            background: #f0f0f0;
+            border-color: #9f9f9f;
+        }
+
+        .portfolio-summary {
+            margin: 0 0 0.9rem;
+            color: #252525;
+            line-height: 1.8;
+            word-break: keep-all;
+        }
+
+        .portfolio-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .portfolio-badge {
+            display: inline-block;
+            padding: 0.35rem 0.65rem;
+            border: 1px solid #d0d0d0;
+            border-radius: 999px;
+            background: #ffffff;
+            color: #333333;
+            font-size: 0.82rem;
+        }
+
+        .portfolio-list {
+            margin: 0;
+            padding-left: 1.2rem;
+            display: grid;
+            gap: 0.45rem;
+        }
+
+        .portfolio-list li {
+            color: #1f1f1f;
         }
 
         .career-company {
@@ -457,6 +557,14 @@
             .profile-grid {
                 grid-template-columns: 1fr;
             }
+
+            .portfolio-head {
+                flex-direction: column;
+            }
+
+            .portfolio-links {
+                justify-content: flex-start;
+            }
         }
     </style>
 </head>
@@ -471,6 +579,7 @@
             <a href="#stack-title">기술스택</a>
             <a href="#focus-title">주요기술</a>
             <a href="#career-title">주요경력</a>
+            <a href="#portfolio-title">포트폴리오</a>
         </nav>
 
         <section class="hero">
@@ -639,7 +748,48 @@
             </div>
         </section>
 
-        <p class="footer-note">Last Updated: 2026.06.01</p>
+        <section class="section" aria-labelledby="portfolio-title">
+            <h2 class="section-title" id="portfolio-title">포트폴리오</h2>
+
+            <div class="portfolio-grid">
+                <article class="portfolio-card">
+                    <div class="portfolio-head">
+                        <div>
+                            <h3 class="portfolio-name">Pulse Brief</h3>
+                            <p class="portfolio-period">개인 뉴스 브리핑 서비스 | 2026.06</p>
+                        </div>
+                        <div class="portfolio-links" aria-label="Pulse Brief 관련 링크">
+                            <a href="https://news.pulse-brief.co.kr" target="_blank" rel="noopener noreferrer">서비스 보기</a>
+                            <a href="https://github.com/qnwnen22/pulse-brief" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
+                    </div>
+
+                    <p class="portfolio-summary">
+                        RSS 뉴스와 원문 기사 페이지를 수집해 유사 이슈로 그룹화하고, 카테고리별 전날/주간 이슈 요약을 제공하는 개인용 뉴스 브리핑 서비스입니다. C# 기반 서버 개발부터 MongoDB 저장소 전환, AI 요약 연동, IIS 배포, Cloudflare Tunnel 외부 공개까지 직접 설계하고 운영했습니다.
+                    </p>
+
+                    <div class="portfolio-meta" aria-label="Pulse Brief 기술 키워드">
+                        <span class="portfolio-badge">ASP.NET Core</span>
+                        <span class="portfolio-badge">MongoDB</span>
+                        <span class="portfolio-badge">RSS 수집</span>
+                        <span class="portfolio-badge">AngleSharp</span>
+                        <span class="portfolio-badge">OpenAI API</span>
+                        <span class="portfolio-badge">IIS</span>
+                        <span class="portfolio-badge">Cloudflare Tunnel</span>
+                    </div>
+
+                    <ul class="portfolio-list">
+                        <li>RSS 수집, 기사 저장, 원문 본문 및 대표 이미지 수집 파이프라인 구현</li>
+                        <li>로컬 임베딩 기반 유사 기사 그룹화와 카테고리별 이슈 요약 기능 구현</li>
+                        <li>MongoDB 기반 저장 구조, 운영 진단 API, 운영 로그, 백업/복구 스크립트 구성</li>
+                        <li>관리자 API 토큰 보호, SSRF 방어, 보안 헤더 적용 등 배포 전 보안 하드닝 수행</li>
+                        <li>IIS와 Cloudflare Tunnel을 활용해 개인 PC 기반 외부 HTTPS 배포 환경 구성</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <p class="footer-note">Last Updated: 2026.06.09</p>
     </main>
 </body>
 
