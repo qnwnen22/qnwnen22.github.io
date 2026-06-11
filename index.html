@@ -756,7 +756,7 @@
                     <div class="portfolio-head">
                         <div>
                             <h3 class="portfolio-name">Pulse Brief</h3>
-                            <p class="portfolio-period">개인 뉴스 브리핑 서비스 | 2026.06</p>
+                            <p class="portfolio-period">공개 뉴스 브리핑 서비스 | 2026.06</p>
                         </div>
                         <div class="portfolio-links" aria-label="Pulse Brief 관련 링크">
                             <a href="https://news.pulse-brief.co.kr" target="_blank" rel="noopener noreferrer">서비스 보기</a>
@@ -765,7 +765,7 @@
                     </div>
 
                     <p class="portfolio-summary">
-                        RSS 뉴스와 원문 기사 페이지를 수집해 유사 이슈로 그룹화하고, 카테고리별 전날/주간 이슈 요약을 제공하는 개인용 뉴스 브리핑 서비스입니다. C# 기반 서버 개발부터 MongoDB 저장소 전환, AI 요약 연동, IIS 배포, Cloudflare Tunnel 외부 공개까지 직접 설계하고 운영했습니다.
+                        RSS 뉴스와 원문 기사 페이지를 수집해 유사 이슈로 그룹화하고, 카테고리별 전날/주간 이슈 요약을 제공하는 공개 뉴스 브리핑 서비스입니다. ASP.NET Core 기반 웹 서버와 분리형 Collector, MongoDB 저장소, OpenAI 전날 요약, 완료 주간 로컬 요약, AWS Lightsail Ubuntu 배포와 Cloudflare Tunnel 운영까지 직접 설계하고 운영했습니다.
                     </p>
 
                     <div class="portfolio-meta" aria-label="Pulse Brief 기술 키워드">
@@ -774,22 +774,22 @@
                         <span class="portfolio-badge">RSS 수집</span>
                         <span class="portfolio-badge">AngleSharp</span>
                         <span class="portfolio-badge">OpenAI API</span>
-                        <span class="portfolio-badge">IIS</span>
+                        <span class="portfolio-badge">AWS Lightsail</span>
                         <span class="portfolio-badge">Cloudflare Tunnel</span>
                     </div>
 
                     <ul class="portfolio-list">
-                        <li>RSS 수집, 기사 저장, 원문 본문 및 대표 이미지 수집 파이프라인 구현</li>
-                        <li>로컬 임베딩 기반 유사 기사 그룹화와 카테고리별 이슈 요약 기능 구현</li>
-                        <li>MongoDB 기반 저장 구조, 운영 진단 API, 운영 로그, 백업/복구 스크립트 구성</li>
-                        <li>관리자 API 토큰 보호, SSRF 방어, 보안 헤더 적용 등 배포 전 보안 하드닝 수행</li>
-                        <li>IIS와 Cloudflare Tunnel을 활용해 개인 PC 기반 외부 HTTPS 배포 환경 구성</li>
+                        <li>RSS 수집, 기사 저장, 원문 본문 및 대표 이미지 수집을 수행하는 독립 Collector 파이프라인 구현</li>
+                        <li>키워드 분포, 출처 수, 기사 수, 로컬 임베딩 유사도를 활용한 유사 기사 그룹화와 대표 이슈 선별 로직 개선</li>
+                        <li>OpenAI API 기반 전날 요약과 저장된 일간 요약 기반 주간 로컬 요약을 분리해 토큰 비용과 운영 안정성 최적화</li>
+                        <li>MongoDB 기반 저장 구조, 관리자 페이지, RSS 소스 관리, 운영 진단 API, 로그, 백업/복구 스크립트 구성</li>
+                        <li>AWS Lightsail Ubuntu, systemd, Cloudflare Tunnel 기반으로 개인 PC 의존 없는 공개 HTTPS 운영 환경 이전</li>
                     </ul>
                 </article>
             </div>
         </section>
 
-        <p class="footer-note">Last Updated: 2026.06.09</p>
+        <p class="footer-note">Last Updated: 2026.06.11</p>
     </main>
 </body>
 
